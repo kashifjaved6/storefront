@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  storefront-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-05-25T01:44:21.3879626+05:00"
+    description: A Helm chart for Kubernetes
+    digest: 89b44603eb09d39e27331ab73ad63e521454df280af927c374d871161a94a18f
+    name: storefront-chart
+    type: application
+    urls:
+    - storefront-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-05-25T01:44:21.3861975+05:00"
