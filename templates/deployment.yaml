@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: storefronts
+  labels:
+    app: {{ .Values.domainName}}
+  name: {{ .Values.domainName}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.domainName}}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      namespace: storefront
+      labels:
+        app: {{ .Values.domainName}}
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: {{ .Values.domainName}}
+        image: 521462631753.dkr.ecr.us-west-2.amazonaws.com/storefront:latest
+        imagePullPolicy: Always
+        resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m" 
+        ports:
+            - containerPort: 3004
+
